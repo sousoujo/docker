@@ -1,0 +1,19 @@
+mkdir docker-laravel
+cd docker-laravel
+git clone https://github.com/sousoujo/docker.git .
+
+mkdir src
+
+# イメージ作成
+$ docker-compose build
+
+# コンテナを起動
+$ docker-compose up -d
+
+#Laravelをインストールする
+
+composer create-project --prefer-dist "laravel/laravel=8.*" .
+
+docker compose exec app bash
+chmod 777 -R /var/www/html/storage
+
