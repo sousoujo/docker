@@ -15,6 +15,8 @@ RUN apt-get update && \
     vim \
     && docker-php-ext-install pdo_mysql bcmath
 
+COPY ./src /var/www/html/
+
 WORKDIR /var/www/html
 
 RUN composer global require "laravel/installer"
